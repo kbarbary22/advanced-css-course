@@ -4,7 +4,8 @@
   "description": "landing page for natours",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass starter/sass/main.scss starter/css/style.css -w"
+    "compile:sass": "node-sass starter/sass/main.scss starter/css/style.css -w",
+    "compile:sass-demo": "node-sass code-pen-demo/sass/demo.scss code-pen-demo/css/demo.css -w"
   },
   "author": "keshawn barbary",
   "license": "ISC",
