@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -8,33 +9,46 @@
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
+
+    //Change for the <button> element
     border: none;
     cursor: pointer;
   }
 
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
   &--white {
-    color: $color-gray-dark;
     background-color: $color-white;
+    color: $color-gray-dark;
 
     &::after {
       background-color: $color-white;
     }
   }
 
-  &:hover {
-    transform: translatey(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
 
     &::after {
-      transform: scalex(1.4) scaleY(1.6);
-      opacity: 0;
+      background-color: $color-primary;
     }
-  }
-
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
   &::after {
@@ -51,13 +65,7 @@
   }
 
   &--animated {
-    /* animation: moveInBottom;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    animation-delay: 0.75s; */
-
-    /* this is how you do the short hand of an animation */
-    animation: moveInBottom 1s ease-out 0.75s;
+    animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
   }
 }
@@ -70,7 +78,7 @@
     display: inline-block;
     text-decoration: none;
     border-bottom: 1px solid $color-primary;
-    pad: 3px;
+    padding: 3px;
     transition: all 0.2s;
   }
 

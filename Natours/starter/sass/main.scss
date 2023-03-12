@@ -9,13 +9,19 @@
 
 @import "components/_button.scss";
 @import "components/_compostion.scss";
-@import "components/feature-box";
+@import "components/_feature-box.scss";
+@import "components/_card.scss";
+@import "components/story";
+@import "components/bg-video";
+@import "components/form";
+@import "components/popup";
 
 @import "layout/header";
-
-@import "pages/_home.scss";
-
+@import "layout/footer";
 @import "layout/grid";
+@import "layout/footer";
+@import "layout/navigation";
+@import "pages/_home.scss";
 
 /* universal reset */
 *,
