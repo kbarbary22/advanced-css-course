@@ -12,3 +12,55 @@
   position: absolute;
   transform: translate(-50%, -50%);
 }
+
+// Media query manager
+/*
+    0 - 600px   Phone
+    600 - 900px     Tablet In Portriat Mode
+    900 - 1200px     Tablet In Landscape
+    [1200 - 1800] Is where normal styles apply
+    18000px +    Bing Desktop
+    */
+/*
+    $breakoint argument chocies: 
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+    */
+
+// Order to write media queires
+/*ORDER: base + typography > general layout + grid > page layout > components */
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    //width < 600
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    //width < 1200px
+    @media (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    //width < 900
+    @media (max-width: 56.25em) {
+      //900px
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      //1800px
+      @content;
+    }
+  }
+}
